@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Cabin Sketch' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet'>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+
+img {
+  width: 100%;
+  height: 100%;
+}
+body {
+  margin: 0;
+  background-color: #f1f1f1;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#navbar {
+font-family: 'Alegreya Sans';font-size: 22px;
+  background-color: #333;
+  position: fixed;
+  top: -50px;
+  width: 97.5%;
+  display: block;
+  transition: top 0.3s;
+background-image: linear-gradient(to bottom, #4285F4,cyan);
+border: 3px solid #000000;
+  border-radius: 25px;
+margin-left: auto;
+  margin-right: auto;
+ 
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #ffffff;
+  color: black;
+border-radius: 25px;
+font-family: 'Cabin Sketch';font-size: 22px;
+}
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+  padding: 20px;
+  background-image: linear-gradient(to right, #4285F4,cyan);
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+  border-radius: 25px;
+  background: #787878;
+  border: 3px solid #ffffff;
+  padding: 20px; 
+ 
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Cabin Sketch';font-size: 22px;
+  font-size: 22px;
+  background-image: linear-gradient(to top, white,#4285F4);
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+
+
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+   border-radius: 25px;
+   border: 3px solid #C0C0C0;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+  border-radius: 25px;
+  background: #787878;
+  border: 3px solid #ffffff;
+  padding: 20px; 
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+font-family: 'Alegreya Sans';font-size: 22px;
+  font-size: 22px;
+  background-image: linear-gradient(to top, white,#4285F4);
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+#rcorners {
+  border-radius: 25px;
+  background: #787878;
+  border: 5px solid #505050;
+  padding: 20px; 
+  width: 80%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Sofia";
+  font-size: 22px;
+  background-image: linear-gradient(to bottom, white,#787878); 
+}
+</style>
+</head>
+<body>
+<div id="navbar">
+  <a href="Home.html"><i class="fa fa-globe"> Home</i></a>
+  <a href="Blog.html"><i class="fa fa-align-left"> Blog</i></a>
+  <a href="message.php"><i class="fa fa-align-center"> User's Blog</i></a>
+  <a href="contact.php"><i class="fa fa-align-right"> Write something!</i></a>
+  <a href="#"><i class="fa fa-angle-double-up">Back to top</i></a>
+
+</div>
+
+
+
+
+<div class="header">
+  <h2>BLOG POST</h2>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>How browser rendering works — behind the scenes</h2>
+      <h5>AUG 5, 2020</h5>
+      <div><center><u>FIG 1.</u></center></div>
+      <img src="https://i2.wp.com/blog.logrocket.com/wp-content/uploads/2018/09/tokens-nodes-dom.png?w=730&ssl=1" ></img>
+      <p><strong><u>Introduction</strong></u></p>
+      <p>How exactly do browsers render websites? I’ll deconstruct the process shortly, but first, it’s important to recap some basics.
+
+A web browser is a piece of software that loads files from a remote server (or perhaps a local disk) and displays them to you — allowing for user interaction. I know you know what a browser is 🙂
+
+However, within a browser, there’s a piece of software that figures out what to display to you based on the files it receives. This is called the browser engine.
+
+The browser engine is a core software component of every major browser, and different browser manufacturers call their engines by different names. The browser engine for Firefox is called Gecko, and Chrome’s is called Blink, which happens to be a fork of WebKit.
+
+You can have a look at a comparison of the various browser engines if that interests you. Don’t let the names confuse you — they are just names. Nothing serious.
+
+For illustrative purposes, let’s assume we’ve got a universal browser engine. This browser engine will be graphically represented as seen below.</p>
+</p>
+    </div>
+
+    <div class="card">
+      <h2>Sending and receiving information</h2>
+      <h5>AUG 5, 2020</h5>
+      <div><u>FIG 2.</u></div>
+      <img src="https://i1.wp.com/blog.logrocket.com/wp-content/uploads/2018/09/dom-example-graphic.png?w=730&ssl=1"></img>
+      <p>The browser reads the raw bytes of data, and not the actual characters of code you have written. Let’s move on. The browser receives the bytes of data, but it can’t really do anything with it; the raw bytes of data must be converted to a form it understands.</p>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>An example DOM represented graphically.</h2>
+      <p>Upon creating these nodes, the nodes are then linked in a tree data structure known as the DOM. The DOM establishes the parent-child relationships, adjacent sibling relationships, etc. The relationship between every node is established in this DOM object.</p>
+    </div>
+    <div class="card">
+      <h3>Conclusion</h3>
+     <details> 
+<strong>
+<center>
+  </h2><summary><mark><u>Summary</u></mark></summary></h2> 
+</strong>
+  <p>Having understood the basics of how the browser renders your HTML, CSS, and JS, I implore you to take time to explore how you may take advantage of this knowledge in optimizing your pages for speed.
+
+A good place to start is the performance section of the Google Web Fundamentals documentation.</p> 
+</center>
+
+</details>
+    </div>
+    <div class="card">
+      <h3>Links</h3>
+      <p><nav>
+<a href='Blog.html'>Blog</a>
+</nav></p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+     <footer class="text-light" >
+    <div class="container" style="top:2000px">
+        <div class="row">
+            <div class="col-md-3 col-lg-4 col-xl-3">
+                <h5>About</h5>
+                <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
+                <p class="mb-0">
+ Publish your passions, your way
+Create a unique and beautiful blog. It’s easy and free.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+
+
+
+<script>
+// When the user scrolls down 20px from the top of the document, slide down the navbar
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-50px";
+  }
+}
+</script>
+<?php
+include('config.php');
+include('contact.php');
+
+?>
+
+</body>
+</html>
